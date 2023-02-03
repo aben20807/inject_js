@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Inject custom script",
+    "short_name": "InjectCustomScript",
+    "version": "1.0.0",
+    "action": {},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "injector.js"
+            ],
+            "run_at": "document_start",
+            "persistent": false
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "injected.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
